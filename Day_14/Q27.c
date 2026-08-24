@@ -1,5 +1,5 @@
 #include <stdio.h>
-// to calculate sum of first n natural numbers using loop
+// to calculate sum of first n odd natural numbers using loop
 int main()
 {
     int n;
@@ -7,9 +7,9 @@ int main()
     scanf("%d", &n);
     int s=0;
 
-    for(int i=1; i<=n; i++){
-    s = s +i;}
-    printf("sum of %d is %d\n",n, s);
+    for(int i=1; i<=n; i=i+1){
+    s = s +(2*i-1);}
+    printf("sum of first %d odd number is %d\n",n, s);
     
     return 0;
 }

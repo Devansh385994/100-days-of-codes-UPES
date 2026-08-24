@@ -9,7 +9,7 @@ int main()
 
     for(int i=1; i<=n; i=i+1){
     s = s *(2*i);}
-    printf("sum of first %d odd number is %d\n",n, s);
+    printf("product of first %d even number is %d\n",n, s);
     
     return 0;
 }

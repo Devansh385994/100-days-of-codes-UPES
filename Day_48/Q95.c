@@ -1,32 +1,30 @@
 #include <stdio.h>
 #include <string.h>
-//to check if one rotation of another
+//to check if another string is rotation or not
 int main()
 {
     char a[100];
-    printf("enter string a:");
+    printf("string a:");
     scanf("%[^\n]",a);
-    char t,c=0;
-    int s=strlen(a);
-    //puts(a); 
+    int s=strlen(a)-1;
     char b[100];
-    printf("enter string b:");
+    printf("string b:");
     scanf(" %[^\n]",b);
-    
-    for(int i=0;i<s-1;i++){
+    int t,same=0;
+    for(int i=0;i<=s;i++){
         t=a[0];
-        a[0]=a[s-1];
-        for(int j=s-2;j>0;j--){
+        a[0]=a[s];
+        for(int j=s-1;j>0;j--){
             a[j+1]=a[j];
         }a[1]=t;
-     for(int k=0;a[k]!='\0';k++){
-        if(a[k]==b[k]){
-            c++;
-        }
-     }      
-    }if(c==s){
+        for(int k=0;a[k]!='\0';k++){
+            if(a[k]==b[k]){
+                same++;
+            }
+        }if(same!=0){goto outloop;}
+    }outloop: if(same==s+1){
         printf("rotation");
-    }else{printf("not rotation");}
-    
-    
+    }else 
+    printf("not rotation");
+
 }
